@@ -14,7 +14,7 @@ endif ()
 project (FileMover)  # Create project "Hello"
 
 # Add main.cpp file of project root directory as source file
-set(SOURCE_FILES main.cc)
+set(SOURCE_FILES main.cc move.h move.cc)
 
 # Add executable target with source files listed in SOURCE_FILES variable
 add_executable(${CMAKE_PROJECT_NAME} ${SOURCE_FILES})
@@ -55,6 +55,6 @@ if (CMAKE_VERSION VERSION_LESS 2.8.11)
 endif()
 
 # Now simply link against gtest or gtest_main as needed. Eg
-add_executable(file_mover_test sample1_unittest.cc sample1.h sample1.cc)
+add_executable(file_mover_test move_unittest.cc move.h move.cc)
 target_link_libraries(file_mover_test gtest_main)
 add_test(NAME file_mover_test COMMAND file_mover_test)
